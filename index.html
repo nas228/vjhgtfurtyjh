@@ -206,18 +206,97 @@
             margin: 0 1rem;
             text-decoration: none;
         }
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav li {
-                margin: 0.5rem 0;
-            }
-            .pricing-cards {
-                flex-direction: column;
-                align-items: center;
-            }
+        /* --- Уже существующие стили --- */
+/* ... ваш исходный CSS ... */
+
+/* Адаптивная мобильная версия */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    header .container, .features.container, .pricing.container, .testimonials.container {
+        padding: 0 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    nav {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Раздел возможностей */
+    .features-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .features-list .feature {
+        text-align: center;
+        max-width: 100%;
+        padding: 10px 0;
+    }
+
+    /* Цены */
+    .pricing-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .pricing-card .btn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1.1rem;
+    }
+
+    /* Отзывы */
+    .testimonial-carousel {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .testimonial p {
+        font-size: 0.95rem;
+    }
+
+    /* Футер */
+    footer .footer-links {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}   
         }
     </style>
 </head>
@@ -321,7 +400,7 @@
             <a href="#testimonials">Отзывы</a>
             <a href="#contact">Контакты</a>
         </div>
-        <p>&copy; 2023 NutriPlan. Все права защищены.</p>
+        <p></p>
     </footer>
 
     <script>
