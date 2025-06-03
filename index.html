@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriPlan - Умный планировщик здорового питания</title>
     <style>
+        /* Основные стили */
         :root {
             --primary: #4CAF50;
             --secondary: #8BC34A;
@@ -24,6 +25,7 @@
             color: white;
             padding: 2rem 0;
             text-align: center;
+            position: relative;
         }
         .container {
             width: 85%;
@@ -52,6 +54,7 @@
         nav a:hover {
             color: var(--accent);
         }
+        /* Стили секции hero */
         .hero {
             padding: 4rem 0;
             text-align: center;
@@ -105,7 +108,43 @@
             padding: 3rem 0;
             text-align: center;
         }
-        .pricing {
+        /* Стили для карусели отзывов */
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .testimonial {
+            min-width: 300px;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 1rem;
+        }
+        .carousel-ctrl {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--accent);
+            border: none;
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        /* Стили для ценовых карточек */
+        
+                   .pricing {
             padding: 3rem 0;
             text-align: center;
         }
@@ -122,6 +161,10 @@
             padding: 2rem;
             width: 280px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .pricing-card:hover {
+            transform: scale(1.05);
         }
         .pricing-card.popular {
             border: 2px solid var(--accent);
@@ -222,128 +265,82 @@
         </div>
         <div class="feature-card">
             <h3>Консультации нутрициолога</h3>
-            <p>Доступ к профессиональным консультациям по питанию прямо в приложении.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Семейный аккаунт</h3>
-            <p>Учитываем предпочтения всех членов семьи при составлении меню.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Экономия времени</h3>
-            <p>Больше не нужно думать, что приготовить и тратить часы на покупки - мы сделаем это за вас!</p>
+                    <p>Доступ к нашим специалистам для создания индивидуальной программы питания, учитывающей ваши цели и образ жизни.</p>
         </div>
     </section>
 
-    <section id="how-it-works" style="background-color: var(--light); padding: 3rem 0;">
-        <div class="container" style="text-align: center;">
-            <h2>Как это работает</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: left; padding: 1rem;">
-                <ol style="line-height: 2;">
-                    <li><strong>Заполните профиль:</strong> Укажите ваши пищевые предпочтения, аллергии, цели и уровень активности.</li>
-                    <li><strong>Получите план питания:</strong> Наш алгоритм создаст персонализированное меню на неделю.</li>
-                    <li><strong>Подтвердите список покупок:</strong> Просмотрите и при необходимости отредактируйте автоматически сформированный список.</li>
-                    <li><strong>Получите доставку:</strong> Свежие продукты привезут в удобное для вас время.</li>
-                    <li><strong>Готовьте с удовольствием:</strong> Простые пошаговые рецепты с фото помогут легко приготовить вкусные и полезные блюда.</li>
-                </ol>
+    <section id="pricing" class="pricing container">
+        <h2>Цены</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Базовый</h3>
+                <p class="price">\$19.99/мес</p>
+                <p>Идеально для новичков в здоровом питании.</p>
+                <a href="#" class="btn">Подписаться</a>
+            </div>
+            <div class="pricing-card popular">
+                <span class="popular-tag">Популярный</span>
+                <h3>Стандартный</h3>
+                <p class="price">\$29.99/мес</p>
+                <p>Идеально для тех, кто хочет достичь своих целей в питании.</p>
+                <a href="#" class="btn">Подписаться</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Премиум</h3>
+                <p class="price">\$49.99/мес</p>
+                <p>Полный доступ ко всем функциям и консультациям с нашим нутрициологом.</p>
+                <a href="#" class="btn">Подписаться</a>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2>Наши тарифы</h2>
-            <p>Выберите подходящий вариант для вашего здорового образа жизни</p>
-            
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>Базовый</h3>
-                    <div class="price">990₽/мес</div>
-                    <ul style="text-align: left; list-style-type: none; padding: 0;">
-                        <li>✓ Персонализированное меню</li>
-                        <li>✓ Список покупок</li>
-                        <li>✓ 5 рецептов в неделю</li>
-                        <li>× Доставка продуктов</li>
-                        <li>× Консультации нутрициолога</li>
-                    </ul>
-                    <a href="#" class="btn" style="margin-top: 1rem;">Выбрать</a>
-                </div>
-                
-                <div class="pricing-card popular">
-                    <div class="popular-tag">Популярный</div>
-                    <h3>Стандарт</h3>
-                    <div class="price">2990₽/мес</div>
-                    <ul style="text-align: left; list-style-type: none; padding: 0;">
-                        <li>✓ Персонализированное меню</li>
-                        <li>✓ Список покупок</li>
-                        <li>✓ 10 рецептов в неделю</li>
-                        <li>✓ Доставка продуктов 1 раз в неделю</li>
-                        <li>× Консультации нутрициолога</li>
-                    </ul>
-                    <a href="#" class="btn" style="margin-top: 1rem; background-color: var(--accent);">Выбрать</a>
-                </div>
-                
-                <div class="pricing-card">
-                    <h3>Премиум</h3>
-                    <div class="price">4990₽/мес</div>
-                    <ul style="text-align: left; list-style-type: none; padding: 0;">
-                        <li>✓ Персонализированное меню</li>
-                        <li>✓ Список покупок</li>
-                        <li>✓ Неограниченное количество рецептов</li>
-                        <li>✓ Доставка продуктов 2 раза в неделю</li>
-                        <li>✓ 1 консультация нутрициолога в месяц</li>
-                    </ul>
-                    <a href="#" class="btn" style="margin-top: 1rem;">Выбрать</a>
-                </div>
+    <section id="testimonials" class="testimonials container">
+        <h2>Отзывы</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <p>"NutriPlan изменил мой подход к питанию. Теперь мне не нужно беспокоиться о планировании!"</p>
+                <span>- Анна, довольный клиент</span>
             </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>Отзывы наших клиентов</h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
-                <div style="background-color: white; padding: 1.5rem; border-radius: 10px; max-width: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <p>"NutriPlan изменил мой подход к питанию. Теперь я всегда знаю, что приготовить, а продукты привозят прямо домой. Сэкономил кучу времени!"</p>
-                    <p><strong>— Михаил, 34 года</strong></p>
-                </div>
-                <div style="background-color: white; padding: 1.5rem; border-radius: 10px; max-width: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <p>"Как маме двоих детей мне было сложно планировать меню. Теперь у нас разнообразное и сбалансированное питание для всей семьи!"</p>
-                    <p><strong>— Анна, 29 лет</strong></p>
-                </div>
-                <div style="background-color: white; padding: 1.5rem; border-radius: 10px; max-width: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <p>"Благодаря интеграции с моим фитнес-трекером, NutriPlan подбирает идеальное питание для моих тренировок. Результаты стали заметнее!"</p>
-                    <p><strong>— Дмитрий, 27 лет</strong></p>
-                </div>
+            <div class="testimonial">
+                <p>"Продукты всегда свежие и доставка очень удобная."</p>
+                <span>- Сергей, активный пользователь</span>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" style="padding: 3rem 0; text-align: center;">
-        <div class="container">
-            <h2>Остались вопросы?</h2>
-            <p>Свяжитесь с нами, и мы с радостью на них ответим!</p>
-            <div style="max-width: 500px; margin: 2rem auto;">
-                <form style="display: grid; gap: 1rem;">
-                    <input type="text" placeholder="Ваше имя" style="padding: 0.8rem; border-radius: 5px; border: 1px solid #ddd;">
-                    <input type="email" placeholder="Ваш email" style="padding: 0.8rem; border-radius: 5px; border: 1px solid #ddd;">
-                    <textarea placeholder="Ваше сообщение" style="padding: 0.8rem; border-radius: 5px; border: 1px solid #ddd; min-height: 100px;"></textarea>
-                    <button type="submit" class="btn" style="border: none; cursor: pointer;">Отправить</button>
-                </form>
+            <div class="testimonial">
+                <p>"Я сбросил 10 кг за несколько месяцев благодаря NutriPlan!"</p>
+                <span>- Иван, трансформация</span>
             </div>
+            <!-- Добавьте дополнительные отзывы по мере необходимости -->
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Политика конфиденциальности</a>
-                <a href="#">Условия использования</a>
-                <a href="#">FAQ</a>
-                <a href="#">О нас</a>
-            </div>
-            <p>© 2023 NutriPlan. Все права защищены.</p>
-            <p>Контактный email: info@nutriplan.ru</p>
+        <div class="footer-links">
+            <a href="#features">Возможности</a>
+            <a href="#how-it-works">Как это работает</a>
+            <a href="#pricing">Цены</a>
+            <a href="#testimonials">Отзывы</a>
+            <a href="#contact">Контакты</a>
         </div>
+        <p>&copy; 2023 NutriPlan. Все права защищены.</p>
     </footer>
+
+    <script>
+        const testimonials = document.querySelector('.testimonial-carousel');
+        let currentIndex = 0;
+
+        function showTestimonials() {
+            const testimonialsCount = testimonials.children.length;
+            for (let i = 0; i < testimonialsCount; i++) {
+                testimonials.children[i].style.display = 'none';
+            }
+            testimonials.children[currentIndex].style.display = 'block';
+            currentIndex = (currentIndex + 1) % testimonialsCount;
+        }
+
+        setInterval(showTestimonials, 5000); // Каждые 5 секунд
+        showTestimonials(); // Показать первый отзыв сразу
+    </script>
 </body>
 </html>
+
+
